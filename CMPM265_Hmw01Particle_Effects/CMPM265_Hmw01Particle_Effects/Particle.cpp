@@ -32,7 +32,7 @@ void Particle::update(Time elapsed)
 	vertex.color.a = static_cast<Uint8>(ratio * 255);
 	}
 
-void Particle:: resetParticle()
+void Particle:: resetParticle(Vector2f e_position)
 {
 	// give a random velocity and lifetime to the particle
 	float angle = (std::rand() % 360) * 3.14f / 180.f;
@@ -41,6 +41,6 @@ void Particle:: resetParticle()
 	lifetime = milliseconds((std::rand() % 2000) + 1000);
 
 	// reset the position of the corresponding vertex
-	position = m_emitter;
+	vertex.position = e_position;
 }
 

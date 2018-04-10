@@ -26,6 +26,6 @@ private:
 
 public:
 	void update(Time elapsed);
-	void resetParticle();
+	void resetParticle(Vector2f e_position);
 	
 };
