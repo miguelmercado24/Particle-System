@@ -21,9 +21,11 @@ class Particle : public Drawable, public Transformable
 private:
 	Vector2f velocity;
 	Time lifetime;
+	Time m_lifetime;
+	Vertex vertex;
 
 public:
-
-
+	void update(Time elapsed);
+	void resetParticle();
 	
 };

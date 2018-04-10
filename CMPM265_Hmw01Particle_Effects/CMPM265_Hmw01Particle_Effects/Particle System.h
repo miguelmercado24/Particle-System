@@ -23,7 +23,7 @@ public:
 	ParticleSystem(unsigned int count) :
 		m_particles(count),
 		m_vertices(Points, count),
-		m_lifetime(sf::seconds(3)),
+		m_lifetime(seconds(3)),
 		m_emitter(0, 0)
 	{
 	}

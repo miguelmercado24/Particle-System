@@ -12,8 +12,8 @@ public:
 
 	ParticleSystem(unsigned int count) :
 		m_particles(count),
-		m_vertices(sf::Points, count),
-		m_lifetime(sf::seconds(3)),
+		m_vertices(Points, count),
+		m_lifetime(seconds(3)),
 		m_emitter(0, 0)
 	{
 	}
@@ -23,7 +23,7 @@ public:
 		m_emitter = position;
 	}
 
-	void update(Time elapsed)
+	/*void update(Time elapsed)
 	{
 		for (size_t i = 0; i < m_particles.size(); ++i)
 		{
@@ -42,7 +42,7 @@ public:
 			float ratio = p.lifetime.asSeconds() / m_lifetime.asSeconds();
 			m_vertices[i].color.a = static_cast<Uint8>(ratio * 255);
 		}
-	}
+	}*/
 
 private:
 
@@ -58,7 +58,7 @@ private:
 		target.draw(m_vertices, states);
 	}
 
-	void resetParticle(std::size_t index)
+	/*void resetParticle(size_t index)
 	{
 		// give a random velocity and lifetime to the particle
 		float angle = (std::rand() % 360) * 3.14f / 180.f;
@@ -68,7 +68,7 @@ private:
 
 		// reset the position of the corresponding vertex
 		m_vertices[index].position = m_emitter;
-	}
+	}*/
 
 	vector<Particle> m_particles;
 	VertexArray m_vertices;
