@@ -5,7 +5,6 @@
 
 #include"Particle.h"
 
-
 void Particle::update(Time elapsed)
 	{
 
