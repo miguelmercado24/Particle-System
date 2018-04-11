@@ -19,8 +19,8 @@ using namespace std;
 class Particle : public Drawable, public Transformable
 {
 private:
-	Vector2f velocity;
-	Time lifetime;
+	//Vector2f velocity;
+	//Time lifetime;
 	Time m_lifetime;
 	Vertex vertex;
 
@@ -30,5 +30,7 @@ public:
 	virtual void Particle::draw(RenderTarget& target, RenderStates states) const;
 	void resetParticle(Vector2f e_position);
 	bool alive;
+	Vector2f velocity;
+	Time lifetime;
 	
 };

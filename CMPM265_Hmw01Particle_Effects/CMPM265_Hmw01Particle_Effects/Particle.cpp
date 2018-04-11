@@ -45,6 +45,7 @@ void Particle::draw(RenderTarget& target, RenderStates states) const
 	// our particles don't use a texture
 	states.texture = NULL;
 
+	//target.draw(vertex,states);
 }
 
 void Particle:: resetParticle(Vector2f e_position)
