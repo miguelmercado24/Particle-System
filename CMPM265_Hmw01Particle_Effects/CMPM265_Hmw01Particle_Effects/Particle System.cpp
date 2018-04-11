@@ -31,6 +31,7 @@ ParticleSystem::ParticleSystem(unsigned int count):
 			// if the particle is dead, respawn it
 			if (p.alive == false)
 				p.resetParticle(m_emitter);
+			p.update(elapsed);
 
 		}
 	}

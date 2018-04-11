@@ -25,7 +25,9 @@ private:
 	Vertex vertex;
 
 public:
+	Particle();
 	void update(Time elapsed);
+	virtual void Particle::draw(RenderTarget& target, RenderStates states) const;
 	void resetParticle(Vector2f e_position);
 	bool alive;
 	
