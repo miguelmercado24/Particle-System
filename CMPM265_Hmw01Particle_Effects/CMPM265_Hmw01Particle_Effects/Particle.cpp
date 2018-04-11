@@ -37,7 +37,7 @@ void Particle::update(Time elapsed)
 	vertex.color.a = static_cast<Uint8>(ratio * 255);
 	}
 
-/*void Particle::draw(RenderTarget& target, RenderStates states) const
+void Particle::draw(RenderTarget& target, RenderStates states) const
 {
 	// apply the transform
 	states.transform *= getTransform();
@@ -45,9 +45,7 @@ void Particle::update(Time elapsed)
 	// our particles don't use a texture
 	states.texture = NULL;
 
-	// draw the vertex array
-	target.draw(vertex, states);
-}*/
+}
 
 void Particle:: resetParticle(Vector2f e_position)
 {
