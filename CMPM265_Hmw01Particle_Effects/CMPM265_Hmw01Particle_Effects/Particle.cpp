@@ -13,8 +13,9 @@ void Particle::update(Time elapsed)
 	lifetime -= elapsed;
 
 	// Check to see if particle is dead
-	if (lifetime <= sf::Time::Zero)
-		resetParticle();
+	if (lifetime <= Time::Zero)
+		//resetParticle();
+		alive = false;
 	
 	// update the position of the vertex
 	vertex.position += velocity * elapsed.asSeconds();

@@ -19,14 +19,8 @@ using namespace std;
 class ParticleSystem : public Drawable, public Transformable
 {
 public:
-
-	ParticleSystem(unsigned int count) :
-		m_particles(count),
-		m_vertices(Points, count),
-		m_lifetime(seconds(3)),
-		m_emitter(0, 0)
-	{
-	}
+	
+	ParticleSystem(unsigned int count);
 	
 	void setEmitter(Vector2f position);
 
