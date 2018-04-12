@@ -12,6 +12,7 @@
 #include <SFML/System.hpp>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
+#include"Globals.h"
 
 using namespace sf;
 using namespace std;
@@ -26,6 +27,9 @@ private:
 public:
 	RectangleShape vertex;
 	Particle();
+	float x, y, dx, dy, R, angle;
+	Animation anim;
+	void settings(Animation &a, int X, int Y, float Angle, int radius);
 	void update(Time elapsed);
 	void resetParticle(Vector2f e_position);
 	bool alive;

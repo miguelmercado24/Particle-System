@@ -43,3 +43,6 @@ extern Animation sExplosion_ship;
 
 //begining number of particles
 extern int prt;
+
+extern const int W;
+extern const int H;

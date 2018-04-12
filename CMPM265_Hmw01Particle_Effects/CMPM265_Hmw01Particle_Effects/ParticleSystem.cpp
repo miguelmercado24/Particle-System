@@ -21,6 +21,15 @@ ParticleSystem::ParticleSystem(unsigned int count):
 		m_emitter = position;
 	}
 
+	void ParticleSystem::setAnims()
+	{
+		for (size_t i = 0; i < m_particles.size(); ++i)
+		{
+			Particle& p = m_particles[i];
+			//p.settings(sRock, rand() % W, rand() % H, rand() % 360, 25);
+		}
+	}
+
 	void ParticleSystem::update(Time elapsed)
 	{
 		for (size_t i = 0; i < m_particles.size(); ++i)
@@ -35,14 +44,6 @@ ParticleSystem::ParticleSystem(unsigned int count):
 
 			// update the particles
 				p.update(elapsed);
-
-			// update the position of the corresponding vertex
-			/*m_vertices[i].position += p.velocity * elapsed.asSeconds();
-
-			// update the alpha (transparency) of the particle according to its lifetime
-			float ratio = p.lifetime.asSeconds() / m_lifetime.asSeconds();
-			m_vertices[i].color.a = static_cast<sf::Uint8>(ratio * 255);*/
-
 		}
 	}
 
@@ -59,7 +60,6 @@ ParticleSystem::ParticleSystem(unsigned int count):
 		{
 			target.draw(p.vertex);
 		}
-		//target.draw(m_particles[i].vertex, states);
 	}
 
 	void ParticleSystem::resetParticle(std::size_t index)

@@ -12,6 +12,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 #include"Particle.h"
+#include"Globals.h"
 
 using namespace sf;
 using namespace std;
@@ -30,6 +31,7 @@ private:
 
 	virtual void draw(RenderTarget& target, RenderStates states) const;
 	void ParticleSystem::resetParticle(std::size_t index);
+	void setAnims();
 	vector<Particle> m_particles;
 	VertexArray m_vertices;
 	Time m_lifetime;
