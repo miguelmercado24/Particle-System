@@ -153,11 +153,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="Particle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Particle.h" />
   </ItemGroup>
