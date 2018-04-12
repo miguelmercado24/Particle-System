@@ -4,7 +4,7 @@
 //HMK01 Particle Systems
 
 #include"Particle.h"
-#include"Particle System.h"
+#include"ParticleSystem.h"
 
 
 ParticleSystem::ParticleSystem(unsigned int count):
@@ -55,7 +55,10 @@ ParticleSystem::ParticleSystem(unsigned int count):
 		states.texture = NULL;
 
 		// draw the vertex array
-		target.draw(m_vertices, states);
+		for (Particle p : m_particles)
+		{
+			target.draw(p.vertex);
+		}
 		//target.draw(m_particles[i].vertex, states);
 	}
 

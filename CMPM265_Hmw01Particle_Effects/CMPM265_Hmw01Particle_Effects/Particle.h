@@ -16,18 +16,17 @@
 using namespace sf;
 using namespace std;
 
-class Particle : public Drawable, public Transformable
+class Particle
 {
 private:
 	//Vector2f velocity;
 	//Time lifetime;
 	Time m_lifetime;
-	Vertex vertex;
 
 public:
+	RectangleShape vertex;
 	Particle();
 	void update(Time elapsed);
-	virtual void Particle::draw(RenderTarget& target, RenderStates states) const;
 	void resetParticle(Vector2f e_position);
 	bool alive;
 	Vector2f velocity;

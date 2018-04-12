@@ -12,7 +12,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 #include"Particle.h"
-#include"Particle System.h"
+#include"ParticleSystem.h"
 
 
 int main()
