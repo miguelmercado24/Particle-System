@@ -31,7 +31,7 @@ private:
 
 	virtual void draw(RenderTarget& target, RenderStates states) const;
 	void ParticleSystem::resetParticle(std::size_t index);
-	void setAnims();
+	void setAnims(Animation &a, int X, int Y, float Angle, int radius);
 	vector<Particle> m_particles;
 	VertexArray m_vertices;
 	Time m_lifetime;

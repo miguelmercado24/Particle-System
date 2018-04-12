@@ -5,6 +5,7 @@
 
 #include"Particle.h"
 #include"ParticleSystem.h"
+#include"Globals.h"
 
 
 ParticleSystem::ParticleSystem(unsigned int count):
@@ -21,12 +22,12 @@ ParticleSystem::ParticleSystem(unsigned int count):
 		m_emitter = position;
 	}
 
-	void ParticleSystem::setAnims()
+	void ParticleSystem::setAnims(Animation &a, int X, int Y, float Angle, int radius)
 	{
 		for (size_t i = 0; i < m_particles.size(); ++i)
 		{
 			Particle& p = m_particles[i];
-			//p.settings(sRock, rand() % W, rand() % H, rand() % 360, 25);
+			p.settings(a, X, Y, Angle, radius);
 		}
 	}
 
