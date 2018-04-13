@@ -21,9 +21,6 @@ int main()
 	// create the window
 	RenderWindow window(VideoMode(512, 512), "Particles");
 
-	//begining number of particles
-	int prt = 1000;
-
 	// create the particle system
 	ParticleSystem particles(prt);
 
@@ -91,11 +88,11 @@ int main()
 		}
 		
 		//increasing particles
-		if (Keyboard::isKeyPressed(Keyboard::Left))
+		if (Keyboard::isKeyPressed(Keyboard::Right))
 			particles.incPart();
 
 		//decreasingparticles
-		if (Keyboard::isKeyPressed(Keyboard::Right))
+		if (Keyboard::isKeyPressed(Keyboard::Left))
 			particles.decPart();
 		
 

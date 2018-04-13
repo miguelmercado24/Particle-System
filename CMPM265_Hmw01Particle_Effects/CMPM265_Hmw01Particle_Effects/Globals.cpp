@@ -36,3 +36,5 @@ bool Animation::isEnd()
 Texture t1, t2, t3, t4, t5, t6;
 const int W =512;
 const int H =512;
+
+int prt = 1000;

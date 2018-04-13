@@ -34,17 +34,17 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 	void ParticleSystem:: incPart()
 	{
-		m_particles.resize(currentparticles+500);
-		m_vertices.resize(currentparticles + 500);
-		//prt = currentparticles;
+		m_particles.resize(prt += 100);
+		m_vertices.resize(prt += 100);
+		//prt +=500;
 		
 	}
 
 	void ParticleSystem::decPart()
 	{
-		m_particles.resize(currentparticles - 500);
-		m_vertices.resize(currentparticles - 500);
-		//prt = currentparticles;
+		m_particles.resize(prt -= 100);
+		m_vertices.resize(prt -= 100);
+		//prt -= 500;
 	}
 
 	void ParticleSystem::update(Time elapsed)
