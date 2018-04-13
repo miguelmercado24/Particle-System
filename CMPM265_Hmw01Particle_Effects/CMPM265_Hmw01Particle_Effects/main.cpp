@@ -24,6 +24,9 @@ int main()
 	// create the particle system
 	ParticleSystem particles(prt);
 
+	//set the texture for the particles
+	particles.setText();
+
 	// create a clock to track the elapsed time
 	Clock clock;
 

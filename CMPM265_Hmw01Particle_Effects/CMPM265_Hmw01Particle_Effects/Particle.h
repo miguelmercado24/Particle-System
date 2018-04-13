@@ -29,7 +29,7 @@ public:
 	Particle();
 	float x, y, dx, dy, R, angle;
 	Animation anim;
-	void settings(Animation &a, int X, int Y, float Angle, int radius);
+	//void settings(Animation &a, int X, int Y, float Angle, int radius);
 	void update(Time elapsed);
 	void resetParticle(Vector2f e_position);
 	bool alive;

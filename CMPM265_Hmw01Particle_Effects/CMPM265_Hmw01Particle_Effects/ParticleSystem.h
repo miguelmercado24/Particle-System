@@ -27,6 +27,7 @@ public:
 	void setEmitter(Vector2f position);
 
 	//void setAnims(Animation &a, int X, int Y, float Angle, int radius);
+	void setText();
 	void incPart();
 	void decPart();
 	void update(Time elapsed);
@@ -39,5 +40,6 @@ private:
 	VertexArray m_vertices;
 	Time m_lifetime;
 	Vector2f m_emitter;
+	Texture asteroid;
 
 };

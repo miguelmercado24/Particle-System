@@ -23,6 +23,17 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 		m_emitter = position;
 	}
 
+	void ParticleSystem::setText()
+	{
+		asteroid.loadFromFile("images/rock_v02.png");
+		for (size_t i = 0; i < m_particles.size(); ++i)
+		{
+			// apply the text to each particle
+			Particle& p = m_particles[i];
+			p.vertex.setTexture(&asteroid);
+		}
+	}
+
 	/*void ParticleSystem::setAnims(Animation &a, int X, int Y, float Angle, int radius)
 	{
 		for (size_t i = 0; i < m_particles.size(); ++i)
@@ -35,16 +46,16 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 	void ParticleSystem:: incPart()
 	{
 		m_particles.resize(prt += 100);
-		m_vertices.resize(prt += 100);
-		//prt +=500;
+		//m_vertices.resize(prt += 100);
+		setText();
 		
 	}
 
 	void ParticleSystem::decPart()
 	{
 		m_particles.resize(prt -= 100);
-		m_vertices.resize(prt -= 100);
-		//prt -= 500;
+		//m_vertices.resize(prt -= 100);
+		setText();
 	}
 
 	void ParticleSystem::update(Time elapsed)
