@@ -1,5 +1,9 @@
 #include "Globals.h"
 
+
+// create the window
+RenderWindow window(VideoMode(512, 512), "Particles");
+
 Animation::Animation()
 {
 
@@ -38,3 +42,5 @@ const int W =512;
 const int H =512;
 
 int prt = 1000;
+
+Text pText;

@@ -18,8 +18,6 @@
 
 int main()
 {
-	// create the window
-	RenderWindow window(VideoMode(512, 512), "Particles");
 
 	// create the particle system
 	ParticleSystem particles(prt);
@@ -61,7 +59,6 @@ int main()
 	Animation sExplosion_ship(t1, 0, 0, 192, 192, 64, 0.5);
 
 	//Text for Number of Particles
-	sf::Text pText;
 	pText.setFont(font);
 	pText.setCharacterSize(40);
 	pText.setPosition(125, 10);

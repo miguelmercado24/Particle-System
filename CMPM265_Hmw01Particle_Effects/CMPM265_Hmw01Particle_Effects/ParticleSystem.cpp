@@ -53,9 +53,17 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 	void ParticleSystem::decPart()
 	{
-		m_particles.resize(prt -= 100);
-		//m_vertices.resize(prt -= 100);
-		setText();
+		if (prt <= 0)
+		{
+			pText.setString("Min Particles Reached!");
+			window.draw(pText);
+		}
+		else
+		{
+			m_particles.resize(prt -= 100);
+			//m_vertices.resize(prt -= 100);
+			setText();
+		}
 	}
 
 	void ParticleSystem::update(Time elapsed)

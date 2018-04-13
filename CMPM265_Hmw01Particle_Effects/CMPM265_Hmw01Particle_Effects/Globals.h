@@ -13,6 +13,9 @@
 using namespace std;
 using namespace sf;
 
+//Setting the Window Dimensions
+extern RenderWindow window;
+
 class Animation
 {
 public:
@@ -48,3 +51,6 @@ extern const int W;
 extern const int H;
 
 extern unsigned int currentparticles;
+
+//Text for Number of Particles
+extern Text pText;
