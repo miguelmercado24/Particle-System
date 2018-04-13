@@ -13,7 +13,7 @@ Particle::Particle()
 
 }
 
-void Particle::settings(Animation &a, int X, int Y, float Angle, int radius)
+/*void Particle::settings(Animation &a, int X, int Y, float Angle, int radius)
 {
 	anim = a;
 	x = X; y = Y;
@@ -21,7 +21,7 @@ void Particle::settings(Animation &a, int X, int Y, float Angle, int radius)
 	//R = 1;
 	angle = Angle;
 	R = radius;
-}
+}*/
 
 void Particle::update(Time elapsed)
 	{

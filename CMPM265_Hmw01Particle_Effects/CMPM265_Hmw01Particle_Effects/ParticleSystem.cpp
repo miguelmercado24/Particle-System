@@ -8,12 +8,13 @@
 #include"Globals.h"
 
 
-ParticleSystem::ParticleSystem(unsigned int count):
-		
+ParticleSystem::ParticleSystem(unsigned int count) :
+
 	m_particles(count),
 	m_vertices(Points, count),
 	m_lifetime(seconds(3)),
-	m_emitter(0, 0)
+	m_emitter(0, 0),
+	currentparticles(count)
 	{
 	}
 
@@ -22,13 +23,28 @@ ParticleSystem::ParticleSystem(unsigned int count):
 		m_emitter = position;
 	}
 
-	void ParticleSystem::setAnims(Animation &a, int X, int Y, float Angle, int radius)
+	/*void ParticleSystem::setAnims(Animation &a, int X, int Y, float Angle, int radius)
 	{
 		for (size_t i = 0; i < m_particles.size(); ++i)
 		{
 			Particle& p = m_particles[i];
 			p.settings(a, X, Y, Angle, radius);
 		}
+	}*/
+
+	void ParticleSystem:: incPart()
+	{
+		m_particles.resize(currentparticles+500);
+		m_vertices.resize(currentparticles + 500);
+		//prt = currentparticles;
+		
+	}
+
+	void ParticleSystem::decPart()
+	{
+		m_particles.resize(currentparticles - 500);
+		m_vertices.resize(currentparticles - 500);
+		//prt = currentparticles;
 	}
 
 	void ParticleSystem::update(Time elapsed)

@@ -87,9 +87,17 @@ int main()
 		if (Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			particles.setEmitter(window.mapPixelToCoords(mouse));
+			//particles.setAnims(sRock, rand() % W, rand() % H, rand() % 360, 25);
 		}
 		
-		//particles.setEmitter(250);
+		//increasing particles
+		if (Keyboard::isKeyPressed(Keyboard::Left))
+			particles.incPart();
+
+		//decreasingparticles
+		if (Keyboard::isKeyPressed(Keyboard::Right))
+			particles.decPart();
+		
 
 		// update it
 		Time elapsed = clock.restart();

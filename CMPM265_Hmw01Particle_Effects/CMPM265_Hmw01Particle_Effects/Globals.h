@@ -46,3 +46,5 @@ extern int prt;
 
 extern const int W;
 extern const int H;
+
+extern unsigned int currentparticles;
