@@ -2,7 +2,7 @@
 
 
 // create the window
-RenderWindow window(VideoMode(512, 512), "Particles");
+RenderWindow window(VideoMode(1366, 768), "Particles");
 
 Animation::Animation()
 {

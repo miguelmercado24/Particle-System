@@ -17,7 +17,7 @@
 using namespace sf;
 using namespace std;
 
-class ParticleSystem : public Drawable, public Transformable
+class ParticleSystem
 {
 public:
 	
@@ -31,12 +31,11 @@ public:
 	void incPart();
 	void decPart();
 	void update(Time elapsed);
+	vector<Particle> m_particles;
 
 private:
 
-	virtual void draw(RenderTarget& target, RenderStates states) const;
 	void ParticleSystem::resetParticle(std::size_t index);
-	vector<Particle> m_particles;
 	VertexArray m_vertices;
 	Time m_lifetime;
 	Vector2f m_emitter;

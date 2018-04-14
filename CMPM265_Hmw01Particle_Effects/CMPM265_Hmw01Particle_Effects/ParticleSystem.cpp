@@ -73,6 +73,14 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			// update the particle lifetime
 			Particle& p = m_particles[i];
 
+			//increasing particles
+			if (Keyboard::isKeyPressed(Keyboard::Right))
+				incPart();
+
+			//decreasingparticles
+			if (Keyboard::isKeyPressed(Keyboard::Left))
+				decPart();
+
 			// if the particle is dead, respawn it
 			if (p.alive == false)
 				p.resetParticle(m_emitter);
@@ -80,21 +88,6 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 			// update the particles
 				p.update(elapsed);
-		}
-	}
-
-	void ParticleSystem::draw(RenderTarget& target, RenderStates states) const
-	{
-		// apply the transform
-		states.transform *= getTransform();
-
-		// our particles don't use a texture
-		states.texture = NULL;
-
-		// draw the vertex array
-		for (Particle p : m_particles)
-		{
-			target.draw(p.vertex);
 		}
 	}
 

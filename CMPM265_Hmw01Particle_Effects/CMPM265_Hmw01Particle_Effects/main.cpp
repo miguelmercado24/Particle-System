@@ -14,16 +14,20 @@
 #include"Particle.h"
 #include"ParticleSystem.h"
 #include"Globals.h"
+#include"ParticleManager.h"
 
 
 int main()
 {
 
-	// create the particle system
-	ParticleSystem particles(prt);
+	//// create the particle system
+	//ParticleSystem particles(prt);
+	ParticleManager systems(prt);
 
 	//set the texture for the particles
-	particles.setText();
+	//particles.setText();
+
+	systems.setSystemsText();
 
 	// create a clock to track the elapsed time
 	Clock clock;
@@ -80,25 +84,28 @@ int main()
 		}
 
 		// make the particle system emitter follow the mouse
-		Vector2i mouse = Mouse::getPosition(window);
-		if (Mouse::isButtonPressed(sf::Mouse::Left))
-		{
-			particles.setEmitter(window.mapPixelToCoords(mouse));
-			//particles.setAnims(sRock, rand() % W, rand() % H, rand() % 360, 25);
-		}
+		//Vector2i mouse = Mouse::getPosition(window);
+		//if (Mouse::isButtonPressed(sf::Mouse::Left))
+		//{
+		//	//particles.setEmitter(window.mapPixelToCoords(mouse));
+		//	systems.setEmitterPos(window.mapPixelToCoords(mouse));
+		//	
+		//}
 		
 		//increasing particles
-		if (Keyboard::isKeyPressed(Keyboard::Right))
+		/*if (Keyboard::isKeyPressed(Keyboard::Right))
 			particles.incPart();
 
 		//decreasingparticles
 		if (Keyboard::isKeyPressed(Keyboard::Left))
-			particles.decPart();
+			particles.decPart();*/
 		
+
 
 		// update it
 		Time elapsed = clock.restart();
-		particles.update(elapsed);
+		//particles.update(elapsed);
+		systems.Update(elapsed);
 
 		//Updating the Particle display
 		stringstream sS;
@@ -107,8 +114,23 @@ int main()
 
 		// draw it
 		window.clear();
-		window.draw(particles);
+		//window.draw(particles);
 		window.draw(pText);
+		for (Particle p : systems.system1->m_particles)
+		{
+			window.draw(p.vertex);
+		}
+		for (Particle p : systems.system2->m_particles)
+		{
+			window.draw(p.vertex);
+		}
+		for (Particle p : systems.system3->m_particles)
+		{
+			window.draw(p.vertex);
+		}
+
+
+
 		window.display();
 	}
 

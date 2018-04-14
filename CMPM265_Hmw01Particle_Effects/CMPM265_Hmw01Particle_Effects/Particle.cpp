@@ -33,6 +33,7 @@ void Particle::update(Time elapsed)
 	if (lifetime <= Time::Zero)
 		alive = false;
 	
+
 	// update the position of the vertex
 	vertex.move(velocity * elapsed.asSeconds());
 
