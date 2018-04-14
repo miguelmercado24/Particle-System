@@ -21,17 +21,13 @@ int main()
 {
 
 	//// create the particle system
-	//ParticleSystem particles(prt);
 	ParticleManager systems(prt);
 
 	//set the texture for the particles
-	//particles.setText();
-
 	systems.setSystemsText();
 
 	// create a clock to track the elapsed time
 	Clock clock;
-
 
 	//Loading Roboto Font
 	Font font;
@@ -65,7 +61,7 @@ int main()
 	//Text for Number of Particles
 	pText.setFont(font);
 	pText.setCharacterSize(40);
-	pText.setPosition(125, 10);
+	pText.setPosition(525, 10);
 	pText.setFillColor(Color::Red);
 	pText.setOutlineThickness(3);
 	pText.setOutlineColor(Color::Black);
@@ -92,19 +88,8 @@ int main()
 		//	
 		//}
 		
-		//increasing particles
-		/*if (Keyboard::isKeyPressed(Keyboard::Right))
-			particles.incPart();
-
-		//decreasingparticles
-		if (Keyboard::isKeyPressed(Keyboard::Left))
-			particles.decPart();*/
-		
-
-
 		// update it
 		Time elapsed = clock.restart();
-		//particles.update(elapsed);
 		systems.Update(elapsed);
 
 		//Updating the Particle display
@@ -114,7 +99,6 @@ int main()
 
 		// draw it
 		window.clear();
-		//window.draw(particles);
 		window.draw(pText);
 		for (Particle p : systems.system1->m_particles)
 		{
@@ -128,8 +112,6 @@ int main()
 		{
 			window.draw(p.vertex);
 		}
-
-
 
 		window.display();
 	}

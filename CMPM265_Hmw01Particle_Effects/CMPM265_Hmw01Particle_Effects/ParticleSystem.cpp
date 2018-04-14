@@ -46,7 +46,6 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 	void ParticleSystem:: incPart()
 	{
 		m_particles.resize(prt += 100);
-		//m_vertices.resize(prt += 100);
 		setText();
 		
 	}
@@ -72,14 +71,6 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 		{
 			// update the particle lifetime
 			Particle& p = m_particles[i];
-
-			//increasing particles
-			if (Keyboard::isKeyPressed(Keyboard::Right))
-				incPart();
-
-			//decreasingparticles
-			if (Keyboard::isKeyPressed(Keyboard::Left))
-				decPart();
 
 			// if the particle is dead, respawn it
 			if (p.alive == false)
