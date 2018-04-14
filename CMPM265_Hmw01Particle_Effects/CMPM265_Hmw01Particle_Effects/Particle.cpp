@@ -7,7 +7,7 @@
 
 Particle::Particle()
 {
-	vertex.setSize(Vector2f(10,10));
+	vertex.setSize(Vector2f(30,30));
 	m_lifetime = seconds(3);
 
 
