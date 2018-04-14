@@ -25,9 +25,12 @@ void ParticleManager::setEmitterPos(Vector2f position)
 
 void ParticleManager::setSystemsText()
 {
-	system1->setText();
-	system2->setText();
-	system3->setText();
+	p_texture1.loadFromFile("images/rock_v02.png");
+	p_texture2.loadFromFile("images/rock_v02.png");
+	p_texture3.loadFromFile("images/rock_v02.png");
+	system1->setTexture(&p_texture1);
+	system2->setTexture(&p_texture2);
+	system3->setTexture(&p_texture3);
 }
 
 void ParticleManager::Update(Time elapsed)

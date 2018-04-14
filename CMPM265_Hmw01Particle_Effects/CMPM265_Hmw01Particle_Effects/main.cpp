@@ -23,9 +23,6 @@ int main()
 	//// create the particle system
 	ParticleManager systems(prt);
 
-	//set the texture for the particles
-	systems.setSystemsText();
-
 	// create a clock to track the elapsed time
 	Clock clock;
 
@@ -47,6 +44,11 @@ int main()
 	
 	t1.setSmooth(true);
 	t2.setSmooth(true);
+
+	asteroid.loadFromFile("images/rock_v02.png");
+
+	//set the texture for the particles
+	systems.setSystemsText();
 
 	//Setting the background sprite
 	Sprite background(t2);

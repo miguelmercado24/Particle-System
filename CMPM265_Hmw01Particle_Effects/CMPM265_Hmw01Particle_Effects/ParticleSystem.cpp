@@ -23,14 +23,17 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 		m_emitter = position;
 	}
 
-	void ParticleSystem::setText()
+	void ParticleSystem::setTexture(Texture* texture)
 	{
-		asteroid.loadFromFile("images/rock_v02.png");
+		//p_texture.loadFromFile("images/rock_v02.png");
+		p_texture = *texture;
+
 		for (size_t i = 0; i < m_particles.size(); ++i)
 		{
 			// apply the text to each particle
 			Particle& p = m_particles[i];
-			p.vertex.setTexture(&asteroid);
+			//p.vertex.setTexture(&p_texture);
+			 p.vertex.setTexture(texture);
 		}
 	}
 
@@ -46,7 +49,8 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 	void ParticleSystem:: incPart()
 	{
 		m_particles.resize(prt += 100);
-		setText();
+		//m_vertices.resize(prt += 100);
+		setTexture(&p_texture);
 		
 	}
 
@@ -57,11 +61,12 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			pText.setString("Min Particles Reached!");
 			window.draw(pText);
 		}
+
 		else
 		{
 			m_particles.resize(prt -= 100);
 			//m_vertices.resize(prt -= 100);
-			setText();
+			setTexture(&p_texture);
 		}
 	}
 
