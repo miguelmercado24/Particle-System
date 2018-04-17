@@ -54,3 +54,6 @@ extern unsigned int currentparticles;
 
 //Text for Number of Particles
 extern Text pText;
+extern Text lText;
+extern Text eText;
+extern Text sText;

@@ -49,9 +49,17 @@ void Particle::update(Time elapsed)
 	//vertex.setSize((sizeRatioAnti)*initSize);
 	vertex.setSize((sizeRatioAnti)*maxSize);
 
+	/*if (Keyboard::isKeyPressed(Keyboard::Up))
+	{
+		vertex.setSize((sizeRatioAnti)*maxSize);
+	}*/
+
 	//shrinking size
-	//vertex.setSize((ratio)*maxSize);
-	//vertex.setSize((ratio)* initSize);
+	if (Keyboard::isKeyPressed(Keyboard::Down))
+	{
+		vertex.setSize((ratio)*maxSize);
+		//vertex.setSize((ratio)* initSize);
+	}
 
 	//update rotation
 	rotateSpeed = ratio *rotateMaxSpeed;

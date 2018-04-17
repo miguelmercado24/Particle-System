@@ -44,3 +44,6 @@ const int H =512;
 int prt = 1000;
 
 Text pText;
+Text lText;
+Text eText;
+Text sText;

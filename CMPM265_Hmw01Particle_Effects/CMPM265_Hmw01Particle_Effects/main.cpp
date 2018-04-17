@@ -46,6 +46,32 @@ int main()
 	pText.setOutlineColor(Color::Black);
 	pText.setString("Particles: ");
 
+	//Text for Liner System
+	lText.setFont(font);
+	lText.setCharacterSize(40);
+	lText.setPosition(150, 700);
+	lText.setFillColor(Color::Red);
+	lText.setOutlineThickness(3);
+	lText.setOutlineColor(Color::Black);
+	lText.setString("Linear");
+
+	//Text for Exponential System
+	eText.setFont(font);
+	eText.setCharacterSize(40);
+	eText.setPosition(600, 700);
+	eText.setFillColor(Color::Red);
+	eText.setOutlineThickness(3);
+	eText.setOutlineColor(Color::Black);
+	eText.setString("Exponential");
+
+	//Text for Sin System
+	sText.setFont(font);
+	sText.setCharacterSize(40);
+	sText.setPosition(1200, 700);
+	sText.setFillColor(Color::Red);
+	sText.setOutlineThickness(3);
+	sText.setOutlineColor(Color::Black);
+	sText.setString("Sin");
 
 	// run the main loop
 	while (window.isOpen())
@@ -79,6 +105,9 @@ int main()
 		// draw it
 		window.clear();
 		window.draw(pText);
+		window.draw(lText);
+		window.draw(eText);
+		window.draw(sText);
 		for (Particle p : systems.system1->m_particles)
 		{
 			window.draw(p.vertex);
