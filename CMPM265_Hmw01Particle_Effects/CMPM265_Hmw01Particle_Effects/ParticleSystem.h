@@ -23,10 +23,7 @@ public:
 	
 	ParticleSystem(unsigned int count);
 	unsigned int currentparticles;
-	
 	void setEmitter(Vector2f position);
-
-	//void setAnims(Animation &a, int X, int Y, float Angle, int radius);
 	void setTexture(Texture* texture);
 	void incPart();
 	void decPart();
@@ -35,7 +32,7 @@ public:
 
 private:
 
-	void ParticleSystem::resetParticle(std::size_t index);
+	//void ParticleSystem::resetParticle(std::size_t index);
 	VertexArray m_vertices;
 	Time m_lifetime;
 	Vector2f m_emitter;

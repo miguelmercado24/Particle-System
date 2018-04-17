@@ -27,15 +27,12 @@ private:
 public:
 	RectangleShape vertex;
 	Particle();
-	float x, y, dx, dy, R, angle;
-	Animation anim;
-	//void settings(Animation &a, int X, int Y, float Angle, int radius);
 	void update(Time elapsed);
 	void resetParticle(Vector2f e_position);
 	bool alive;
 	Vector2f velocity;
-	Vector2f initSize;
-	Vector2f maxSize;
+	Vector2f initSize, maxSize;
+	float rotateSpeed, rotateMaxSpeed;
 	Time lifetime;
 	
 };

@@ -26,7 +26,7 @@ public:
 	ParticleManager(unsigned int count);
 	void setEmitterPos(Vector2f position);
 	void setSystemsText();
-	void SetBehaviours();
+	//void SetBehaviours();
 	void Update(Time elapsed);
 
 };

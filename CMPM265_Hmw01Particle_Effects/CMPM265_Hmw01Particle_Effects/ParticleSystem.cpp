@@ -37,14 +37,6 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 		}
 	}
 
-	/*void ParticleSystem::setAnims(Animation &a, int X, int Y, float Angle, int radius)
-	{
-		for (size_t i = 0; i < m_particles.size(); ++i)
-		{
-			Particle& p = m_particles[i];
-			p.settings(a, X, Y, Angle, radius);
-		}
-	}*/
 
 	void ParticleSystem:: incPart()
 	{
@@ -80,23 +72,11 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			// if the particle is dead, respawn it
 			if (p.alive == false)
 				p.resetParticle(m_emitter);
-				//resetParticle(i);
 
 			// update the particles
 				p.update(elapsed);
 		}
 	}
 
-	void ParticleSystem::resetParticle(std::size_t index)
-	{
-		// give a random velocity and lifetime to the particle
-		float angle = (std::rand() % 360) * 3.14f / 180.f;
-		float speed = (std::rand() % 50) + 50.f;
-		m_particles[index].velocity = sf::Vector2f(std::cos(angle) * speed, std::sin(angle) * speed);
-		m_particles[index].lifetime = sf::milliseconds((std::rand() % 2000) + 1000);
-
-		// reset the position of the corresponding vertex
-		m_vertices[index].position = m_emitter;
-	}
 
 

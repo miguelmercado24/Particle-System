@@ -34,31 +34,8 @@ int main()
 		return 0;
 	}
 
-	//Textures
-	t1.loadFromFile("images/explosions/type_B.png");
-	t2.loadFromFile("images/background.jpg");
-	t3.loadFromFile("images/explosions/type_C.png");
-	t4.loadFromFile("images/rock.png");
-	t5.loadFromFile("images/fire_blue.png");
-	t6.loadFromFile("images/rock_small.png");
-	
-	t1.setSmooth(true);
-	t2.setSmooth(true);
-
-	asteroid.loadFromFile("images/rock_v02.png");
-
 	//set the texture for the particles
 	systems.setSystemsText();
-
-	//Setting the background sprite
-	Sprite background(t2);
-
-	//Animations
-	Animation sExplosion(t3, 0, 0, 256, 256, 48, 0.5);
-	Animation sRock(t4, 0, 0, 64, 64, 16, 0.2);
-	Animation sRock_small(t6, 0, 0, 64, 64, 16, 0.2);
-	Animation sBullet(t5, 0, 0, 32, 64, 16, 0.8);
-	Animation sExplosion_ship(t1, 0, 0, 192, 192, 64, 0.5);
 
 	//Text for Number of Particles
 	pText.setFont(font);

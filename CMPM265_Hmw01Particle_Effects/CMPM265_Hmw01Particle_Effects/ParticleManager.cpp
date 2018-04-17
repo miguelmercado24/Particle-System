@@ -17,7 +17,7 @@ ParticleManager::ParticleManager(unsigned int count)
 
 void ParticleManager::setEmitterPos(Vector2f position) 
 {
-	system1->setEmitter(position);
+	//system1->setEmitter(position);
 	//system2->setEmitter(position->x - 200);
 	//system2->setEmitter(position->x + 200);
 

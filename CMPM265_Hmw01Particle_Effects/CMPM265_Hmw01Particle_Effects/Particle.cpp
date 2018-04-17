@@ -10,19 +10,10 @@ Particle::Particle()
 	vertex.setSize(Vector2f(10,10));
 	m_lifetime = seconds(3);
 	initSize= Vector2f(10, 10);
-	maxSize= Vector2f(20,20);
+	maxSize= Vector2f(30,30);
+	rotateMaxSpeed = 100;
 
 }
-
-/*void Particle::settings(Animation &a, int X, int Y, float Angle, int radius)
-{
-	anim = a;
-	x = X; y = Y;
-	//angle = 0;
-	//R = 1;
-	angle = Angle;
-	R = radius;
-}*/
 
 void Particle::update(Time elapsed)
 	{
@@ -42,8 +33,6 @@ void Particle::update(Time elapsed)
 
 	//update color
 
-	//update rotation
-
 	// update the alpha (transparency) of the particle according to its lifetime
 	float ratio = lifetime.asSeconds() / m_lifetime.asSeconds();
 	Color c = vertex.getFillColor();
@@ -52,10 +41,22 @@ void Particle::update(Time elapsed)
 
 	//update size   (i.e., size = start_size + ((lifetime-current_time)/lifetime)*final_size).
 
-	//float ratio = (lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds();
-	float ratioAnti = m_lifetime.asSeconds() / lifetime.asSeconds();
-	vertex.setSize(initSize + ((lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds())*maxSize);
-	//vertex.scale((ratioAnti)*maxSize);
+	//float sizeRatio = (lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds();
+	float sizeRatioAnti = m_lifetime.asSeconds() / lifetime.asSeconds();
+	
+	//increasing size
+	//vertex.setSize(initSize + ((lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds())*maxSize);
+	//vertex.setSize((sizeRatioAnti)*initSize);
+	vertex.setSize((sizeRatioAnti)*maxSize);
+
+	//shrinking size
+	//vertex.setSize((ratio)*maxSize);
+	//vertex.setSize((ratio)* initSize);
+
+	//update rotation
+	rotateSpeed = ratio *rotateMaxSpeed;
+	vertex.rotate(rotateSpeed*elapsed.asSeconds());
+
 	}
 
 
