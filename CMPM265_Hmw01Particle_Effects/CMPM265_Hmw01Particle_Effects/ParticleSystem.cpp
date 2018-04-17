@@ -75,6 +75,7 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			float ratioAnti = p.m_lifetime.asSeconds() / p.lifetime.asSeconds();
 
 			m_particles[i].velocity = velStrategy->update(ratio)*m_particles[i].maxVelocity;
+			m_particles[i].rotateSpeed = rotStrategy->update(ratio)*m_particles[i].rotateMaxSpeed;
 
 			// update the particles
 				//p.update(elapsed);

@@ -23,6 +23,7 @@ public:
 	void update(Time elapsed);
 	vector<Particle> m_particles;
 	Strategy *velStrategy = nullptr;
+	Strategy *rotStrategy = nullptr;
 
 private:
 

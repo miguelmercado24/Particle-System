@@ -10,9 +10,9 @@ Particle::Particle()
 	vertex.setSize(Vector2f(10,10));
 	m_lifetime = seconds(3);
 	initSize= Vector2f(10, 10);
-	maxSize= Vector2f(30,30);
+	maxSize= Vector2f(70,70);
 	rotateMaxSpeed = 100;
-	maxVelocity = Vector2f(30, 30);
+	maxVelocity = Vector2f(20, 20);
 
 }
 
