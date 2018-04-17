@@ -24,14 +24,12 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 	void ParticleSystem::setTexture(Texture* texture)
 	{
-		//p_texture.loadFromFile("images/rock_v02.png");
 		p_texture = *texture;
 
 		for (size_t i = 0; i < m_particles.size(); ++i)
 		{
 			// apply the text to each particle
 			Particle& p = m_particles[i];
-			//p.vertex.setTexture(&p_texture);
 			 //p.vertex.setTexture(texture);
 			 m_particles[i].vertex.setTexture(texture);
 		}
@@ -39,7 +37,7 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 	void ParticleSystem:: incPart()
 	{
-		m_particles.resize(prt += 100);
+		m_particles.resize(prt += 50);
 		//m_vertices.resize(prt += 100);
 		setTexture(&p_texture);
 		
@@ -55,7 +53,7 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 		else
 		{
-			m_particles.resize(prt -= 100);
+			m_particles.resize(prt -= 50);
 			//m_vertices.resize(prt -= 100);
 			setTexture(&p_texture);
 		}

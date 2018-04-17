@@ -12,6 +12,7 @@ Particle::Particle()
 	initSize= Vector2f(10, 10);
 	maxSize= Vector2f(30,30);
 	rotateMaxSpeed = 100;
+	maxVelocity = Vector2f(30, 30);
 
 }
 
@@ -29,24 +30,18 @@ void Particle::update(Time elapsed)
 	// update the position of the vertex
 	vertex.move(velocity * elapsed.asSeconds());
 
-	//update velocity
-
-	//update color
-
 	// update the alpha (transparency) of the particle according to its lifetime
 	float ratio = lifetime.asSeconds() / m_lifetime.asSeconds();
 	Color c = vertex.getFillColor();
 	c.a = static_cast<Uint8>(ratio * 255);
 	vertex.setFillColor(c);
 
-	//update size   (i.e., size = start_size + ((lifetime-current_time)/lifetime)*final_size).
+	//Updating the size  (i.e., size = start_size + ((lifetime-current_time)/lifetime)*final_size).
 
 	//float sizeRatio = (lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds();
 	float sizeRatioAnti = m_lifetime.asSeconds() / lifetime.asSeconds();
 	
 	//increasing size
-	//vertex.setSize(initSize + ((lifetime.asSeconds() - m_lifetime.asSeconds()) / lifetime.asSeconds())*maxSize);
-	//vertex.setSize((sizeRatioAnti)*initSize);
 	vertex.setSize((sizeRatioAnti)*maxSize);
 
 	/*if (Keyboard::isKeyPressed(Keyboard::Up))

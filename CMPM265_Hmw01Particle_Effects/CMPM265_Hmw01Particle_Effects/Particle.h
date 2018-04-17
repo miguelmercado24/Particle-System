@@ -25,6 +25,4 @@ public:
 	float rotateSpeed, rotateMaxSpeed;
 	Time lifetime;
 	Time m_lifetime;
-	//Strategy *velStrategy =nullptr;
-	
 };
