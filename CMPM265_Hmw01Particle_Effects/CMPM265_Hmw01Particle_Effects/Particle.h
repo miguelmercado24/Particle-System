@@ -34,6 +34,8 @@ public:
 	void resetParticle(Vector2f e_position);
 	bool alive;
 	Vector2f velocity;
+	Vector2f initSize;
+	Vector2f maxSize;
 	Time lifetime;
 	
 };
