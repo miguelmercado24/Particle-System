@@ -20,7 +20,7 @@ public:
 	}
 };
 
-class exponentialStrategy : public Strategy
+class ExponentialStrategy : public Strategy
 {
 public:
 	virtual float update(float ratio)
@@ -28,7 +28,7 @@ public:
 		return ratio;
 	}
 };
-class sinStrategy : public Strategy
+class SinStrategy : public Strategy
 {
 public:
 	virtual float update(float ratio)

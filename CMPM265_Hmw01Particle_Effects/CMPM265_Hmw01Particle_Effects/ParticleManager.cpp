@@ -9,10 +9,15 @@ ParticleManager::ParticleManager(unsigned int count)
 {
 	system1 = new ParticleSystem(count);
 	system1->setEmitter(Vector2f(200,400));
+	system1->velStrategy = new LinearStrategy();
+
 	system2 = new ParticleSystem(count);
 	system2->setEmitter(Vector2f(700, 400));
+	system2->velStrategy = new ExponentialStrategy();
+
 	system3 = new ParticleSystem(count);
 	system3->setEmitter(Vector2f(1200, 400));
+	system3->velStrategy = new SinStrategy();
 }
 
 void ParticleManager::setEmitterPos(Vector2f position) 

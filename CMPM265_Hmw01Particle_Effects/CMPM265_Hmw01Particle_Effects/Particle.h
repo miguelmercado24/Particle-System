@@ -4,15 +4,8 @@
 //CMPM 265
 //HMK01 Particle Systems
 
-#include<iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-#include <SFML/System.hpp>
-#include <SFML/OpenGL.hpp>
-#include <SFML/Main.hpp>
 #include"Globals.h"
+#include"Strategy.h"
 
 using namespace sf;
 using namespace std;
@@ -20,9 +13,6 @@ using namespace std;
 class Particle
 {
 private:
-	//Vector2f velocity;
-	//Time lifetime;
-	Time m_lifetime;
 
 public:
 	RectangleShape vertex;
@@ -30,9 +20,11 @@ public:
 	void update(Time elapsed);
 	void resetParticle(Vector2f e_position);
 	bool alive;
-	Vector2f velocity;
+	Vector2f velocity, maxVelocity;
 	Vector2f initSize, maxSize;
 	float rotateSpeed, rotateMaxSpeed;
 	Time lifetime;
+	Time m_lifetime;
+	//Strategy *velStrategy =nullptr;
 	
 };

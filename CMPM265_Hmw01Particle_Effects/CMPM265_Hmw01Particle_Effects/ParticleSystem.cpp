@@ -3,7 +3,6 @@
 //CMPM 265
 //HMK01 Particle Systems
 
-#include"Particle.h"
 #include"ParticleSystem.h"
 #include"Globals.h"
 
@@ -33,10 +32,10 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			// apply the text to each particle
 			Particle& p = m_particles[i];
 			//p.vertex.setTexture(&p_texture);
-			 p.vertex.setTexture(texture);
+			 //p.vertex.setTexture(texture);
+			 m_particles[i].vertex.setTexture(texture);
 		}
 	}
-
 
 	void ParticleSystem:: incPart()
 	{
@@ -73,8 +72,15 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 			if (p.alive == false)
 				p.resetParticle(m_emitter);
 
+			//apply the strategy
+			float ratio = (p.lifetime.asSeconds() - p.m_lifetime.asSeconds()) / p.lifetime.asSeconds();
+			float ratioAnti = p.m_lifetime.asSeconds() / p.lifetime.asSeconds();
+
+			m_particles[i].velocity = velStrategy->update(ratio)*m_particles[i].maxVelocity;
+
 			// update the particles
-				p.update(elapsed);
+				//p.update(elapsed);
+				m_particles[i].update(elapsed);
 		}
 	}
 
