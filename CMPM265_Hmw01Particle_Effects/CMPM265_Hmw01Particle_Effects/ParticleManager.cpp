@@ -11,16 +11,19 @@ ParticleManager::ParticleManager(unsigned int count)
 	system1->setEmitter(Vector2f(200,400));
 	system1->velStrategy = new LinearStrategy();
 	system1->rotStrategy = new LinearStrategy();
+	system1->angleStrategy = new LinearStrategy();
 
 	system2 = new ParticleSystem(count);
 	system2->setEmitter(Vector2f(700, 400));
 	system2->velStrategy = new ExponentialStrategy();
 	system2->rotStrategy = new ExponentialStrategy();
+	system2->angleStrategy = new ExponentialStrategy();
 
 	system3 = new ParticleSystem(count);
 	system3->setEmitter(Vector2f(1200, 400));
 	system3->velStrategy = new SinStrategy();
 	system3->rotStrategy = new SinStrategy();
+	system3->angleStrategy = new SinStrategy();
 }
 
 void ParticleManager::setEmitterPos(Vector2f position) 

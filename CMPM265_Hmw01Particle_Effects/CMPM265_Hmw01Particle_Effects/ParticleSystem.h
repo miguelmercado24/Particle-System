@@ -24,6 +24,7 @@ public:
 	vector<Particle> m_particles;
 	Strategy *velStrategy = nullptr;
 	Strategy *rotStrategy = nullptr;
+	Strategy *angleStrategy = nullptr;
 
 private:
 

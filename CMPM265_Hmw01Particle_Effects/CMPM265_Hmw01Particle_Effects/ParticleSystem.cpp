@@ -76,6 +76,7 @@ ParticleSystem::ParticleSystem(unsigned int count) :
 
 			m_particles[i].velocity = velStrategy->update(ratio)*m_particles[i].maxVelocity;
 			m_particles[i].rotateSpeed = rotStrategy->update(ratio)*m_particles[i].rotateMaxSpeed;
+			m_particles[i].angle = angleStrategy->update(ratio)*m_particles[i].maxRotAngle;
 
 			// update the particles
 				//p.update(elapsed);

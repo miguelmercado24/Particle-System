@@ -23,6 +23,8 @@ public:
 	Vector2f velocity, maxVelocity;
 	Vector2f initSize, maxSize;
 	float rotateSpeed, rotateMaxSpeed;
+	float angle, maxRotAngle;
+	float speed;
 	Time lifetime;
 	Time m_lifetime;
 };

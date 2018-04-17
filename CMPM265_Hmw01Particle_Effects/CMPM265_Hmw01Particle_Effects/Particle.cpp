@@ -28,7 +28,8 @@ void Particle::update(Time elapsed)
 	
 
 	// update the position of the vertex
-	vertex.move(velocity * elapsed.asSeconds());
+	//vertex.move(velocity * elapsed.asSeconds());
+	vertex.move(Vector2f(cos(angle) * (velocity* elapsed.asSeconds(), sin(angle) * velocity* elapsed.asSeconds())));
 
 	// update the alpha (transparency) of the particle according to its lifetime
 	float ratio = lifetime.asSeconds() / m_lifetime.asSeconds();
@@ -67,8 +68,8 @@ void Particle::update(Time elapsed)
 void Particle:: resetParticle(Vector2f e_position)
 {
 	// give a random velocity and lifetime to the particle
-	float angle = (rand() % 360) * 3.14f / 180.f;
-	float speed = (rand() % 50) + 50.f;
+	angle = (rand() % 360) * 3.14f / 180.f;
+	speed = (rand() % 50) + 50.f;
 	velocity = Vector2f(cos(angle) * speed, sin(angle) * speed);
 	lifetime = milliseconds((rand() % 2000) + 1000);
 	//vertex.setSize(Vector2f(10, 10));
